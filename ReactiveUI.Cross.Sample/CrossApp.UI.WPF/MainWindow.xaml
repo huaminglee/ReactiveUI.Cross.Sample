@@ -1,0 +1,21 @@
+﻿<Window x:Class="CrossApp.UI.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="200" Width="673">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Ideas" VerticalAlignment="Top"/>
+        <ListBox x:Name="LstIdeas" HorizontalAlignment="Left" Height="100" Margin="10,31,0,0" VerticalAlignment="Top" Width="645">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Description}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>           
+        </ListBox>
+        
+        <Button Content="New idea" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=CreateIdeaCommand}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="90,136,0,0" Text="{Binding NewIdeaDescription, Mode=TwoWay }"/>
+
+    </Grid>
+</Window>
